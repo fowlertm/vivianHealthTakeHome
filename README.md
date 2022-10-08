@@ -40,5 +40,5 @@ Per the famous `no free lunch theorem`, one must either make assumptions about t
 
 For this assignment, I decided to go the empirical route and simply try out a couple of basic regression models. I settled on a vanilla linear model, a decision tree regressor, and a knn regressor. 
 
-The linear regressor won hands down, with a very respectable ~97%, handling beating the two alternatives. This would seem to offer support to my belief that a linear model is well-suited to these date, although there are many tests, statistical and otherwise, you'd want to run to make sure. I could plot the residuals and make sure they're normally distributed, for example, but that's a project for another time. 
+The linear regressor won hands down, with a very respectable ~97%, handily beating the two alternatives. This would seem to offer support to my belief that a linear model is well-suited to these date, although there are many tests, statistical and otherwise, you'd want to run to make sure. I could plot the residuals and make sure they're normally distributed, for example, but that's a project for another time. 
 
