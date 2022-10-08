@@ -14,11 +14,13 @@ The dataset provided was the `recs2009_public` data, which collects energy-relat
 
 The natural place to start a project like this is at the beginning. I began by loading in the dataset and poking around. After realizing that there were nearly a thousand columns, I looked for a way to reduce the number of input features.
 
-Since this is a timed takehome assignment not meant to require more than a couple of hours, I made simplifying assumptions all over the place to cut down on input features. Some columns are dominated almost entirely by a single value. Of the ~12,000 values in `'SCALEKER'`, for example, basically all were `-2`, which means 'not applicable'. 
+Since this is a timed takehome assignment not meant to require more than a couple of hours, I made simplifying assumptions all over the place to cut down on input features. 
+
+I started with a few columns which are dominated almost entirely by a single value. Of the ~12,000 values in `'SCALEKER'`, for example, basically all were `-2`, which means 'not applicable'. 
 
 Though I couldn't be *100%* sure that these columns have no predictive value without some more testing, it seems reasonable enough to proceed without them. 
 
-Upon inspecting the data I realized that some of the columns were essentially duplicates of the target `KWH` variable, either containing a subset of the calculation that went into that column or expressing the same quantity in different units. Correlation that's too high can cause metrics like accuracy to be much higher than is warranted, so we want to get rid of these too. 
+Upon inspecting the data I realized that some of the columns were essentially duplicates of the target `KWH` variable, either containing a subset of the calculation that went into that column or expressing the same quantity in different units. Correlation that's too high can your metrics to be much higher than is warranted, so we want to get rid of these too. 
 
 At this point I trained and tested a basic linear regression, getting a score of 99.9%. This made me suspicious, so I went back in and aggressively removed highly-correlated columns. A more sensible score of ~96%, along with a very muted correlation matrix, justifies my concerns over multicollinearity. 
 
